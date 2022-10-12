@@ -31,13 +31,13 @@ def query():
             seriesName = alias
 
     # generate the response object
-    resp = {"data": [
-        {"name": "time",
+    resp = {"frames": [{"columns":[
+        {"name": "@timestamp",
          "values": [
             1000*dt.datetime.timestamp(startTime),
             1000*dt.datetime.timestamp(endTime)
             ], "labels": None},
-        {"name": seriesName, "values": [5, 10], "labels": None}
+        {"name": seriesName, "values": [5, 10], "labels": None}]}
     ]}
     print(resp)
     return resp
